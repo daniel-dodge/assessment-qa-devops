@@ -17,9 +17,11 @@ app.get('/', (req, res) => {
   })
   app.get('/js', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/index.js'))
+    rollbar.info("javascript file join success ")
   })
 app.get('/styles', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/index.css'))
+    rollbar.info("css file join success ")
   })
 app.get('/api/robots', (req, res) => {
     try {
